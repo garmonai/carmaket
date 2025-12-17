@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoImport — авто из-за рубежа</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Шапка -->
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-logo">AI</div>
+        <div class="brand-text">
+          <div class="brand-name">AutoImport</div>
+          <div class="brand-sub">Авто под ключ из Европы, Кореи, США</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="openCallback" title="Перезвоните мне">☎</button>
+        <button class="icon-btn" id="openMenu" title="Меню">☰</button>
+      </div>
+    </header>
+
+    <main class="scroll-area" id="scrollArea">
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-badge-row">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Подбор и доставка за 25–35 дней</span>
+          </div>
+          <div class="hero-rating">★ 4.9 / 5 · 300+ авто доставлено</div>
+        </div>
+
+        <h1 class="hero-title">
+          Авто из-за рубежа
+          <span>как из салона</span> — без переплат в РФ
+        </h1>
+
+        <p class="hero-subtitle">
+          Подбираем и ввозим автомобили из Европы, Кореи, ОАЭ и США: проверка истории,
+          торг, логистика, растаможка и оформление под ключ.
+        </p>
+
+        <div class="hero-pill-row">
+          <span class="hero-pill">Экономия до 30–40% от цены в РФ</span>
+          <span class="hero-pill">Гарантия прозрачного контракта</span>
+          <span class="hero-pill">Видеоотчёт по каждому этапу</span>
+        </div>
+
+        <div class="hero-cta-row">
+          <button class="btn-primary" id="heroOrderBtn">
+            🚗 Рассчитать подбор
+          </button>
+          <button class="btn-secondary" id="heroWhatsAppBtn">
+            💬 WhatsApp
+          </button>
+        </div>
+
+        <div class="hero-car-badge">
+          <strong>от 18 900 $</strong>
+          Hyundai Sonata 2021 · Корея · с доставкой и растаможкой
+        </div>
+      </section>
+
+      <!-- Поиск и фильтр -->
+      <section>
+        <div class="section-title-row">
+          <div>
+            <div class="section-title">Каталог авто</div>
+            <div class="section-sub">Актуальные предложения под заказ</div>
+          </div>
+          <div class="section-sub">Обновление ежедневно</div>
+        </div>
+
+        <div class="search-row">
+          <div class="search-input-wrap">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="searchInput"
+              class="search-input"
+              placeholder="Марка, модель, страна, год..."
+            />
+            <span class="search-clear" id="searchClear">×</span>
+          </div>
+          <button class="filter-btn" id="filtersBtn" title="Фильтры">⚙</button>
+        </div>
+
+        <div class="chips-row" id="chipsRow">
+          <button class="chip chip-active" data-filter="all">Все авто</button>
+          <button class="chip" data-filter="europe">Европа</button>
+          <button class="chip" data-filter="korea">Корея</button>
+          <button class="chip" data-filter="usa">США</button>
+          <button class="chip" data-filter="uae">ОАЭ</button>
+          <button class="chip" data-filter="suv">Кроссоверы</button>
+          <button class="chip" data-filter="sedan">Седаны</button>
+        </div>
+      </section>
+
+      <!-- Список авто -->
+      <section class="cars-grid" id="carsGrid">
+        <article
+          class="car-card"
+          data-country="Корея"
+          data-tags="hyundai sonata корея седан"
+          data-segment="korea sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-korea-1.jpg');"
+          >
+            <div class="car-badge">105 000 км · 2021</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">Hyundai Sonata 2.0</h2>
+              <div class="car-price">от 18 900 $</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Бензин · 2.0 · 150 л.с.</div>
+              <div class="meta-pill">Автомат</div>
+              <div class="meta-pill">Без ДТП по базе</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ Срок поставки: 28–35 дней</span>
+              <span>🇰🇷 Аукцион KIA/Hyundai</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="Hyundai Sonata 2.0">Подробнее</button>
+              <button class="btn-solid" data-car="Hyundai Sonata 2.0">
+                Рассчитать с доставкой
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="car-card"
+          data-country="Европа"
+          data-tags="bmw 3 europe европа седан"
+          data-segment="europe sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-europe-1.jpg');"
+          >
+            <div class="car-badge">72 000 км · 2019</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">BMW 320d xDrive</h2>
+              <div class="car-price">от 24 500 €</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Дизель · 2.0 · 190 л.с.</div>
+              <div class="meta-pill">Полный привод</div>
+              <div class="meta-pill">Сервисная история</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ 30–40 дней с растаможкой</span>
+              <span>🇩🇪 Выкуп у дилера</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="BMW 320d xDrive">Подробнее</button>
+              <button class="btn-solid" data-car="BMW 320d xDrive">
+                Получить подбор 3 вариантов
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="car-card"
+          data-country="США"
+          data-tags="tesla model 3 usa электромобиль"
+          data-segment="usa sedan"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-usa-1.jpg');"
+          >
+            <div class="car-badge">Без пробега по РФ</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">Tesla Model 3 Long Range</h2>
+              <div class="car-price">от 32 800 $</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Электро · 75 кВт·ч</div>
+              <div class="meta-pill">Запас хода ~480 км</div>
+              <div class="meta-pill">Под ключ в РФ</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ 35–50 дней с портом</span>
+              <span>🇺🇸 Страховой аукцион</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="Tesla Model 3">Подробнее</button>
+              <button class="btn-solid" data-car="Tesla Model 3">
+                Узнать итоговый бюджет
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="car-card"
+          data-country="ОАЭ"
+          data-tags="toyota land cruiser uae suv джип"
+          data-segment="uae suv"
+        >
+          <div
+            class="car-photo"
+            style="background-image: url('car-uae-1.jpg');"
+          >
+            <div class="car-badge">До 40% выгоды</div>
+          </div>
+          <div class="car-info">
+            <div class="car-title-row">
+              <h2 class="car-title">Toyota Land Cruiser 300</h2>
+              <div class="car-price">от 82 000 $</div>
+            </div>
+            <div class="car-meta-row">
+              <div class="meta-pill">Бензин · 3.5 Twin Turbo</div>
+              <div class="meta-pill">4x4 · Премиум-комплектация</div>
+            </div>
+            <div class="car-tags-row">
+              <span>⏱ 30–45 дней</span>
+              <span>🇦🇪 Официальный рынок</span>
+            </div>
+            <div class="car-cta">
+              <button class="btn-outline" data-car="Land Cruiser 300">Подробнее</button>
+              <button class="btn-solid" data-car="Land Cruiser 300">
+                Рассчитать доставку в мой город
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Шаги работы -->
+      <section class="steps-section" id="steps">
+        <div class="steps-header">
+          <h2 class="section-title" style="margin:0;">Как всё происходит</h2>
+          <span>Простой и прозрачный процесс</span>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div>
+              <strong>Заполняете короткую заявку</strong> — мы уточняем бюджет, страну,
+              класс авто и важные опции (пробег, год, комплектация).
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div>
+              <strong>Подбор и проверка авто</strong> — ищем варианты на аукционах и у
+              дилеров, проверяем историю по базам и присылаем вам 3–5 лучших предложений
+              с расчётом "под ключ".
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div>
+              <strong>Покупка, логистика и таможня</strong> — вы заключаете прозрачный
+              договор, мы выкупаем авто, организуем доставку, растаможку и постанавливаем
+              на учёт в РФ.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Блок заявки -->
+      <section class="cta-section" id="request">
+        <h2 class="cta-title">Рассчитать авто под ваш бюджет</h2>
+        <p class="cta-text">
+          Оставьте контакты — за 15–20 минут подготовим 2–3 оптимальных варианта
+          с учётом доставки, растаможки и всех платежей.
+        </p>
+        <form id="requestForm">
+          <div class="form-row">
+            <input
+              type="text"
+              class="input"
+              id="nameInput"
+              placeholder="Ваше имя"
+            />
+            <input
+              type="tel"
+              class="input"
+              id="phoneInput"
+              placeholder="+7 ___ ___ __ __"
+              required
+            />
+            <input
+              type="text"
+              class="input"
+              id="budgetInput"
+              placeholder="Бюджет и желаемый авто (например: до 3 млн, кроссовер из Кореи)"
+            />
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%; margin-bottom:6px;">
+            Отправить заявку
+          </button>
+          <div class="form-footer">
+            <small>Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</small>
+            <span>Ответ за 10–15 минут</span>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Нижняя навигация -->
+    <nav class="bottom-nav">
+      <div class="nav-item active" data-scroll="#hero">
+        <div class="nav-pill">🏠</div>
+        Домой
+      </div>
+      <div class="nav-item" data-scroll="#carsGrid">
+        <div class="nav-pill">🚗</div>
+        Каталог
+      </div>
+      <div class="nav-item" data-scroll="#steps">
+        <div class="nav-pill">📦</div>
+        Этапы
+      </div>
+      <div class="nav-item" data-scroll="#request">
+        <div class="nav-pill">✉</div>
+        Заявка
+      </div>
+    </nav>
+  </div>
+
+  <!-- Кнопка "наверх" -->
+  <button class="scroll-top-btn" id="scrollToTopBtn">↑</button>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
